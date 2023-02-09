@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app: &app
+  app:
     build:
       context: .
       dockerfile: docker/app/Dockerfile
@@ -13,24 +13,19 @@ services:
       - bundle-volume:/workspace/vendor/bundle
       - node-module-volume:/workspace/node_modules
     depends_on:
-      - postgres
+      - mysql
     command: bash -c 'bin/setup && bin/rails s -b 0.0.0.0'
-  # webpacker:
-  #   <<: *app
-  #   command: bin/webpack-dev-server
-  #   ports:
-  #     - 3035:3035
-  postgres:
-    image: postgres:14
-    restart: unless-stopped
-    volumes:
-      - postgres-volume:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: pg
-      POSTGRES_PASSWORD: password
+  mysql:
+    image: mysql:8.0
     ports:
-      - 5432:5432
+      - 3306:3306
+    volumes:
+      - mysql-volume:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - TZ="Asia/Tokyo"
 volumes:
-  postgres-volume:
+  mysql-volume:
   bundle-volume:
   node-module-volume:

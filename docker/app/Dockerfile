@@ -18,6 +18,8 @@ RUN sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen \
   && locale-gen
 ENV LANG ja_JP.UTF-8
 
+RUN apt-get install -y default-mysql-client
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV BUNDLER_VERSION='2.3.22'
