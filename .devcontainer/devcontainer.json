@@ -4,7 +4,7 @@
   "name": "Ruby 3.1 Rails devcontainer",
   "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
   "service": "app",
-  "runServices": ["app", "postgres"],
+  "runServices": ["app", "mysql"],
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
