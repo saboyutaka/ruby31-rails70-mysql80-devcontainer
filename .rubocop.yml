@@ -1,0 +1,36 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+    - "db/schema.rb"
+    - "bin/*"
+  DisplayCopNames: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockDelimiters:
+  AutoCorrect: false
+  Exclude:
+    - "spec/**/*"
+
+Style/Documentation:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Style/ExtraSpacing:
+  Exclude:
+    - "db/migrate/*.rb"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+ClassAndModuleChildren:
+  Enabled: false
+
+StringLiterals:
+  EnforcedStyle: double_quotes
