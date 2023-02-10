@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
 build: ## build develoment environment
-	if ! [ -f .env ];then cp .env.example .env;fi
+	if ! [ -f .env ];then cp .env.sample .env;fi
 	docker-compose build
 	docker-compose run --rm app bundle install
 	docker-compose run --rm app bin/rails db:create
