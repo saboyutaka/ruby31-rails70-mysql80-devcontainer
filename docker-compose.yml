@@ -14,7 +14,7 @@ services:
       - node-module-volume:/workspace/node_modules
     depends_on:
       - mysql
-    command: bash -c 'bin/setup && bin/rails s -b 0.0.0.0'
+    command: bash -c 'rm -f ./tmp/pids/server.pid && bin/rails s -b 0.0.0.0'
   mysql:
     image: mysql:8.0
     ports:
