@@ -1,10 +1,9 @@
-# devcontainer for Ruby 3.1 and Rails 7.0
+# Ruby 3.1 and Rails 7.0 and MySQL 8.0
 
-Ruby3.1, Ruby on Rails 7.0 の開発環境用の [devcontainer](https://code.visualstudio.com/docs/remote/containers)
+Ruby3.1, Ruby on Rails 7.0, MySQL 8.0 の開発環境
 
-* language server: [solargraph](https://github.com/castwide/solargraph)
-* debugging: [debug](https://github.com/ruby/debug)
-* formatter: [rubocop](https://github.com/rubocop/rubocop)
+Docker Compose と [devcontainer](https://code.visualstudio.com/docs/remote/containers) で実装
+
 
 環境構築方法は以下の2つがあります
 - Dokcer compose で構築する
